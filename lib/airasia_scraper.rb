@@ -26,12 +26,12 @@ module AirasiaScraper
     def get_flight_page_html
       browser = Watir::Browser.new
       browser.goto airasia_link
-      sleep 30
+      sleep 15
       Nokogiri::HTML(browser.html)
     end
 
     def return_flight_data_hash(depart_time, arrive_time, fare)
-      { depart_time: depart_time, arrive_time: arrive_time, fare: fare, link: airasia_link }
+      { depart_time: depart_time, arrive_time: arrive_time, fare: fare.to_f, link: airasia_link }
     end
 
     def airasia_link
