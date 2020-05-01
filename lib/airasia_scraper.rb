@@ -28,6 +28,7 @@ module AirasiaScraper
       browser.goto airasia_link
       sleep 15
       Nokogiri::HTML(browser.html)
+      browser.close
     end
 
     def return_flight_data_hash(depart_time, arrive_time, fare)
