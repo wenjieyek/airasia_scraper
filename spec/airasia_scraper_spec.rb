@@ -6,8 +6,8 @@ RSpec.describe AirasiaScraper do
   end
 
   it "returns correct flight data hash" do
-    c = AirasiaScraper::Client.new("2021-01-02", "KUL", "JHB")
-    flight_data_hash = c.flight_data.first
+    client = AirasiaScraper::Client.new("2021-01-02", "KUL", "JHB")
+    flight_data_hash = client.flight_data.first
 
     expect(flight_data_hash[:depart_time]).not_to be nil
     expect(flight_data_hash[:arrive_time]).not_to be nil
